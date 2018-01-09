@@ -16,15 +16,27 @@ The results will be in the "Saved files" folder.
 
 Explanations for the processed data table contents: 
 "First column"  #AgilentRef Number
-"Ratio1"        # Ratio of the first array
-"Ratio2"        # Ratio of the second array
-"MeanRatio"     # Mean of the two Ratios (or Ratio1 if there is only one array)
-"Chromosome"    # Chromosome number
-"Position"      # Position of the middle of the probe on the chromosome, in bp
-"RatioNorm"     # Ratio obtained after the normalization step (Dividing all the ratio values by the mean of the 10% lowest ratios)
-"RatioDenoised" # (=RatioSmooth) This column is only used in the script for the generation of pdf file called "Denoising"
-"RatioSmooth"   # Obtained by using successively the Denoising and the TOSCA package smoothArray functions on RatioNorm
-"RatioSmoothed1"# =RatioSmooth if smooth=1; if smooth=2, it idicates the ratio after two successive rounds of smoothing using smoothArray function
-"Sites"         # Indicates a probe with a peak adjacent to another probe with a peak. In this case, the same rank is given to the two adjacent probes because they likely correspond to a single peak. To obtein the final number of peaks, the number of probes with a value in the "Sites" column different than NA are removed
-"Peaks"         # Is egal to 1 if we consider there is an enrichment peak on the concerned probe with our Signal Processing criteria and threshold, NA if no peak
-"PeakOrders"    # If the column Peaks value is of 1 on the probe, PeakOrders is the rank of peaks' RatioSmooth (1 for the highest peak)
+
+"Ratio1"         Ratio of the first array
+
+"Ratio2"         Ratio of the second array
+
+"MeanRatio"      Mean of the two Ratios (or Ratio1 if there is only one array)
+
+"Chromosome"     Chromosome number
+
+"Position"       Position of the middle of the probe on the chromosome, in bp
+
+"RatioNorm"      Ratio obtained after the normalization step (Dividing all the ratio values by the mean of the 10% lowest ratios)
+
+"RatioDenoised"  (=RatioSmooth) This column is only used in the script for the generation of pdf file called "Denoising"
+
+"RatioSmooth"    Obtained by using successively the Denoising and the TOSCA package smoothArray functions on RatioNorm
+
+"RatioSmoothed1" =RatioSmooth if smooth=1; if smooth=2, it idicates the ratio after two successive rounds of smoothing using smoothArray function
+
+"Sites"          Indicates a probe with a peak adjacent to another probe with a peak. In this case, the same rank is given to the two adjacent probes because they likely correspond to a single peak. To obtein the final number of peaks, the number of probes with a value in the "Sites" column different than NA are removed
+
+"Peaks"          Is egal to 1 if we consider there is an enrichment peak on the concerned probe with our Signal Processing criteria and threshold, NA if no peak
+
+"PeakOrders"     If the column Peaks value is of 1 on the probe, PeakOrders is the rank of peaks' RatioSmooth (1 for the highest peak)
